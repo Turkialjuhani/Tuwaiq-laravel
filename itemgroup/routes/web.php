@@ -16,9 +16,12 @@ use App\Http\Controllers\ItemsController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/itemgroup',[ItemsController::class ,'GetItemGroup'])->name('itemgroup');
+Route::post('save-group',[ItemsController::class ,'SaveGroupsItems'])->name('save-group');
+Route::get('/items',[ItemsController::class ,'GetItems'])->name('items');
+Route::post('save-items',[ItemsController::class ,'SaveItems'])->name('save-items');
 
 Auth::routes();
 

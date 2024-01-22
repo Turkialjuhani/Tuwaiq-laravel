@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html >
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -12,11 +12,17 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+      *{
+        font-family:cairo;
+      }
+      </style>
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body dir="rtl">
     <div id="app">
        
 <nav class="navbar navbar-expand-lg bg-dark ">
@@ -28,13 +34,13 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="#">الرئيسية </a>
+                        <a class="nav-link active text-white" aria-current="page" href="{{route('welcome')}}">الرئيسية </a>
                       </li>
                   <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="{{route('itemgroup')}}">مجموعات العناصر</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-white" href="#">العناصر</a>
+                    <a class="nav-link text-white" href="{{route('items')}}">العناصر</a>
                   </li>
                  
                 </ul>
