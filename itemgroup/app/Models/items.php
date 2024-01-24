@@ -13,6 +13,7 @@ class items extends Model
         'price',
         'qty',
         'color',
+        'image',
         'itemgropno'
      ];
 }

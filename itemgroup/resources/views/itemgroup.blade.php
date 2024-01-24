@@ -26,12 +26,15 @@
                <tr>
                   <th>رقم المجموعة</th>
                   <th>أسم المجموعة</th>
+                  <th colspan="2">أجراء</th>
                </tr>
             </thead>
             @foreach($data as $row)
             <tr>
                <th>{{$row->id}}</th>
                <th>{{$row->itemgroupname}}</th>
+               <th><a href="{{route('deletegroup',['x'=>$row->id])}}"><i class="bi bi-trash3"></i></a></th>
+               <th><a href="{{route('deletegroup',['x'=>$row->id])}}"><i class="bi bi-pencil-square"></a></i></th>
             </tr>
             @endforeach
          </table>

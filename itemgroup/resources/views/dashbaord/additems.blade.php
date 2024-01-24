@@ -1,12 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.dashbaord')
 @section('content')
-
 <div class="container">
-   <div class="card">
+<div class="card">
+<h1 class="alert alert-success text-center">إضافة منتج : </h1>
+
       <div class="card-body">
       <div class="row d-flex justify-content-center">
       <div class="col-sm-4">
-         <form action="{{route('save-items')}}" method="post">
+         <form action="{{route('save-items-dash')}}" method="post">
             @csrf
             <label for="itemname" class="p-2">الاسم</label>
             <input type="text" class="form-control form-control-sm" name="itemname" id="itemname">
@@ -57,7 +58,7 @@
                <th>{{$row->color}}</th>
                <th>{{$row->itemgropno}}</th>
                <th>{{$row->created_at}}</th>
-               <th><a href="{{route('deleteitems',['y'=>$row->id])}}"><i class="bi bi-trash3"></i></a></th>
+               <th><a href="{{route('deleteitemdash',['x'=>$row->id])}}"><i class="bi bi-trash3"></i></a></th>
                <th><a href="{{route('edititem',['x'=>$row->id])}}"><i class="bi bi-pencil-square"></a></i></th>
             </tr>
             @endforeach

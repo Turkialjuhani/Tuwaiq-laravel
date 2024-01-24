@@ -17,6 +17,17 @@
       *{
         font-family:cairo;
       }
+      .gradient-custom {
+      /* fallback for old browsers */
+        background: #6a11cb;
+
+      /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+}
+
       </style>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -27,14 +38,14 @@
        
 <nav class="navbar navbar-expand-lg bg-dark ">
             <div class="container-fluid">
-              <a class="navbar-brand text-white" href="#">Navbar</a>
+              <a class="navbar-brand text-white" href="#">SALLA</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="{{route('welcome')}}">الرئيسية </a>
+                        <a class="nav-link active text-white" aria-current="page" href="">الرئيسية </a>
                       </li>
                   <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="{{route('itemgroup')}}">مجموعات العناصر</a>
@@ -60,15 +71,35 @@
              
              
               <div>
+                
+              @if(auth::guest())
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link active text-white" aria-current="page" href="#">Login</a>
+                <li class="nav-item">
+                  <a href="{{route('checkout')}}">   
+                  <span class="badge bg-danger">{{Session::get('countitem')}}</span>
+                    <i class="bi bi-basket text-white"></i>
+                  
+                  </a>
+           
+              
+                 
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-white" href="#">Register</a>
+                      <a class="nav-link active text-white" aria-current="page" href="{{route('login')}}">Login</a>
                     </li>
-                    
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="{{route('register')}}">Register</a>
+                    </li>
                   </ul>
+                  @else
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="{{route('logout')}}">Logout</a>
+                                 
+                    </li>
+                  </ul>
+                 @endif
+        
                
               </div>
             </div>
