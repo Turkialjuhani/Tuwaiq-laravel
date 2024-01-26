@@ -5,6 +5,8 @@ use App\Models\itemgroups;
 use App\Models\items;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Http;
+
 use Auth;
 
 use App\Http\Controllers\Controller;
@@ -232,6 +234,14 @@ class ItemsController extends Controller
       return view('checkout');
     }
 
+  // #################HOME PAGE API TEST ################
+   
+   public function TestAPI()
+   {
+     $respones= Http::get('https://api.sampleapis.com/codingresources/codingResources');
+     $data=$respones->object();
+     return view('TestAPI' ,['data'=>$data]);
+    }
 
 
 

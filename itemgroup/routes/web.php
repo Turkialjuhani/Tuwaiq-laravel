@@ -23,6 +23,8 @@ Route::get('/ShowProd/{id}',[ItemsController::class,'ShowProd'])->name('ShowProd
 Route::get('/Addtocart/{id}',[ItemsController::class,'Addtocart'])->name('Addtocart');
 Route::get('/checkout',[ItemsController::class,'checkout'])->name('checkout');
 
+Route::get('/TestAPI',[ItemsController::class ,'TestAPI'])->name('TestAPI');
+
 
 
 
